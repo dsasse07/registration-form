@@ -1,0 +1,61 @@
+
+<form>
+
+  <p>
+    <label>Email</label>
+    <input type="text" name = "">
+  </p>
+
+  <fieldset>
+    <legend>Home Address</legend>
+    <p>
+    <label> Street 1 </label>
+    <input type="text" name = "user[addresses_attributes][][street_1]">
+    </p>
+    <p>
+    <label> Street 2 </label>
+    <input type="text" name = "user[addresses_attributes][][street_2]">
+    </p>
+    <p>
+    <%# Need to make sure that the attribute of address_type gets passed %>
+    <%# Without giving the user the option to set it. %>
+    <input type="hidden" name = "user[addresses_attributes][][address_type]" value="home">
+    </p>
+
+  </fieldset>
+  <fieldset>
+    <legend>Business Address</legend>
+      <p>
+        <label> Street 1 </label>
+        <input type="text" name = "user[addresses_attributes][][street_1]">
+      </p>
+      <p>
+        <label> Street 2 </label>
+        <input type="text" name = "user[addresses_attributes][][street_2]">
+      </p>
+      <p>
+        <%# Need to make sure that the attribute of address_type gets passed %>
+        <%# Without giving the user the option to set it. %>
+        <input type="hidden" name = "user[addresses_attributes][][address_type]" value="business">
+      </p>
+  </fieldset>
+  <fieldset>
+    <legend>Existing Team By Name</legend>
+      <p>
+        <label> Enter Your Team Name </label>
+        <input type="text" name = "">
+      </p>
+  </fieldset>
+  <fieldset>
+    <legend>Create a New Team</legend>
+      <p>
+        <label> Team Name </label>
+        <input type="text" name = "">
+      </p>
+      <p>
+        <label> Hometown </label>
+        <input type="text" name = "">
+      </p>
+  </fieldset>
+  <input type="submit">
+</form>

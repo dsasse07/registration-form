@@ -1,0 +1,57 @@
+
+
+
+<%= form_for @user do |f| %>
+<p>
+  <%= f.label :email%>
+  <%= f.text_field :email%>
+</p>
+
+
+  <%= f.fields_for :addresses do |address_builder| %>
+    <fieldset>
+      <legend> <%= address_builder.object.address_type %> Address </legend>
+        <p>
+          <%= address_builder.label :street_1 %>
+          <%= address_builder.text_field :street_1 %>
+        </p>
+        <p>
+          <%= address_builder.label :street_2 %>
+          <%= address_builder.text_field :street_2 %>
+        </p>
+        <p>
+          <%= address_builder.label :city %>
+          <%= address_builder.text_field :city %>
+        </p>
+        <p>
+          <%= address_builder.label :state %>
+          <%= address_builder.text_field :state %>
+        </p>
+        <p>
+          <%= address_builder.label :zip_code %>
+          <%= address_builder.text_field :zip_code %>
+        </p>
+        <p>
+          <%= address_builder.hidden_field :address_type%>
+        </p>
+    </fieldset>
+  <% end %>
+
+  <%= f.fields_for :team do |team_builder| %>
+    <fieldset>
+      <legend> Team Form (Include Team Name if Registering a New Team) </legend>
+        <p>
+          <%= team_builder.label :name %>
+          <%= team_builder.text_field :name %>
+        </p>
+        <p>
+          <%= team_builder.label :hometown %>
+          <%= team_builder.text_field :hometown %>
+        </p>
+    </fieldset>
+  <% end %>
+
+  <%= f.submit %>
+<%end%>
+
+
